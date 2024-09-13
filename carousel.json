@@ -1,0 +1,36 @@
+{
+  "title": "图片轮播",
+  "type": "object",
+  "properties": {
+    "slides": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "title": "图片轮播项",
+        "properties": {
+          "text": {
+            "type": "string",
+            "description": "文字介绍"
+          },
+          "image": {
+            "type": "string",
+            "format": "uri",
+            "description": "图片URL"
+          },
+          "link": {
+            "type": "string",
+            "format": "uri",
+            "description": "超链接URL"
+          }
+        },
+        "required": [
+          "image"
+        ]
+      }
+    }
+  },
+  "required": [
+    "slides"
+  ]
+}
+

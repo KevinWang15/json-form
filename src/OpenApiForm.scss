@@ -1,0 +1,19 @@
+body {
+  background: linear-gradient(#00000011, #00000033 60%, #00000022);
+  background-size: 100vw 100vh;
+}
+
+.form-root {
+  padding: 20px;
+  margin: 20px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  background: linear-gradient(#FFFFFFFF, #FAFAFAFF 60%, #FFFFFFFF);
+
+  .array-item > div > .form-group {
+    background: #00000011;
+    background-image: linear-gradient(#00000011, #00000033 60%, #00000022);
+    padding: 20px;
+    border-radius: 5px;
+  }
+}

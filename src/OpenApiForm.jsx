@@ -38,7 +38,7 @@ const OpenApiForm = () => {
             },
             (err) => {
                 console.error('Could not copy text: ', err);
-                alert(`Error copying data to clipboard: ${err.message}\nPlease try again or check console for more details.`);
+                alert(`复制失败: ${err.message}\n请打开控制台查看详情`);
             }
         );
     };
@@ -48,13 +48,13 @@ const OpenApiForm = () => {
     };
 
     const handleRestore = () => {
-        const jsonInput = prompt('Please enter your JSON data:');
+        const jsonInput = prompt('请粘贴数据:');
         if (jsonInput) {
             try {
                 const data = JSON.parse(jsonInput);
                 setFormData(data);
             } catch (error) {
-                alert('Invalid JSON input.');
+                alert('无效的数据');
             }
         }
     };
@@ -86,10 +86,10 @@ const OpenApiForm = () => {
             >
                 <div className="btn-group">
                     <button type="button" onClick={copyToClipboard} className="btn btn-primary">
-                        {copied ? 'Data Copied!' : 'Copy Data as JSON'}
+                        {copied ? '复制成功' : '复制数据'}
                     </button>
                     <button type="button" onClick={handleRestore} className="btn" style={{float: 'right'}}>
-                        Restore Form Data from JSON
+                        从之前复制的数据中恢复表单值
                     </button>
                 </div>
             </Form>
